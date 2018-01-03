@@ -23,9 +23,6 @@
 #include <asm/cputype.h>
 #include <asm/cpufeature.h>
 
-#define MIDR_CORTEX_A53 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A53)
-#define MIDR_CORTEX_A57 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A57)
-
 /*
  * Add a struct or another datatype to the union below if you need
  * different means to detect an affected CPU.
@@ -41,6 +38,11 @@ struct arm64_cpu_capabilities {
 		};
 	};
 };
+#define MIDR_KRYO2XX_SILVER MIDR_CPU_PART(ARM_CPU_IMP_QCOM, ARM_CPU_PART_KRYO2XX_SILVER)
+#define MIDR_QCOM_KRYO MIDR_CPU_PART(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_KRYO)
+#define MIDR_CORTEX_A72 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A72)
+#define MIDR_CORTEX_A75 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A75)
+
 
 #define CPU_MODEL_MASK (MIDR_IMPLEMENTOR_MASK | MIDR_PARTNUM_MASK | \
 			MIDR_ARCHITECTURE_MASK)
